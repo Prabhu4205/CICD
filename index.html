@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple & Well-Designed Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-2: #06b6d4;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(20,24,40,0.08);
+      --radius-sm: 10px;
+    }
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, var(--bg), #eef3fb 60%);
+      color: #0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+
+    /* container */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    /* top nav */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;box-shadow:var(--shadow);
+    }
+    .brand h1{margin:0;font-size:18px}
+    .nav-links{display:flex;gap:14px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all .18s}
+    .nav-links a:hover{color:var(--accent);background:rgba(37,99,235,0.06)}
+
+    /* hero */
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px;
+    }
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .hero h2{margin:0 0 12px;font-size:28px}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .cta{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#1d4ed8);color:white;text-decoration:none;font-weight:600;box-shadow:0 8px 28px rgba(37,99,235,0.14);
+    }
+    .secondary{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.05);text-decoration:none;color:var(--accent);font-weight:600}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .feature{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.95));border-radius:var(--radius-sm);padding:16px;box-shadow:0 6px 18px rgba(15,23,42,0.04);min-height:110px}
+    .feature h3{margin:0 0 8px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* card right */
+    .info-list{display:flex;flex-direction:column;gap:12px}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff, #fbfdff);border:1px solid rgba(15,23,42,0.03)}
+    .stat strong{font-size:16px}
+    .stat small{color:var(--muted)}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+    .photo{height:90px;border-radius:10px;background-size:cover;background-position:center;border:1px solid rgba(0,0,0,0.04)}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .card-form{padding:18px;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+    .form-row{display:flex;gap:10px;margin-bottom:10px}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input,textarea,button,select{font-family:inherit}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:#fff}
+    textarea{min-height:120px;resize:vertical}
+
+    /* footer */
+    footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      body{padding:18px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:1fr}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">SD</div>
+        <div>
+          <h1 style="font-size:16px;margin-bottom:4px">SimpleDesign</h1>
+          <div style="font-size:12px;color:var(--muted)">Clean · Fast · Responsive</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="secondary">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Beautifully simple—built for speed and clarity</h2>
+        <p>Use this starter page as a foundation for prototypes, portfolios, or small landing pages. It focuses on readability, fast performance, and responsive layout.</p>
+        <a class="cta" href="#contact">Get Started</a>
+
+        <div class="features" id="features">
+          <div class="feature">
+            <h3>Minimal & Modern</h3>
+            <p>Balanced whitespace and a neutral color palette make content shine.</p>
+          </div>
+          <div class="feature">
+            <h3>Responsive</h3>
+            <p>Layout that adapts smoothly from mobile to large screens.</p>
+          </div>
+          <div class="feature">
+            <h3>Easy to Customize</h3>
+            <p>Single-file CSS makes edits quick—swap colors or fonts in one place.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="info-list">
+          <div class="stat"><div><strong>Fast</strong><div style="font-size:12px;color:var(--muted)">Small bundle size</div></div><div>🚀</div></div>
+          <div class="stat"><div><strong>Accessible</strong><div style="font-size:12px;color:var(--muted)">Focus on readability</div></div><div>♿</div></div>
+          <div class="stat"><div><strong>Well Documented</strong><div style="font-size:12px;color:var(--muted)">Clear classes & variables</div></div><div>📚</div></div>
+        </div>
+
+        <div style="margin-top:16px">
+          <small style="color:var(--muted)">Quick preview</small>
+          <div class="gallery" id="gallery" style="margin-top:8px">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1506765515384-028b60a970df?w=800&q=60')"></div>
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=60')"></div>
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=800&q=60')"></div>
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=60')"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="card-form">
+        <h3 style="margin-top:0">Contact Us</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div style="flex:1">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div style="margin-bottom:10px">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" placeholder="Quick subject" />
+          </div>
+          <div style="margin-bottom:10px">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button type="submit" class="cta">Send Message</button>
+            <button type="reset" class="secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-form" style="display:flex;flex-direction:column;justify-content:center;gap:12px">
+        <div>
+          <h3 style="margin:0 0 6px">Office</h3>
+          <div style="color:var(--muted)">123 Example Street, City, Country</div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 6px">Email</h3>
+          <div style="color:var(--muted)">hello@example.com</div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 6px">Phone</h3>
+          <div style="color:var(--muted)">+1 (555) 123-4567</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> SimpleDesign · Built with ♥ · <span style="color:var(--muted)">Made to be simple</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name || !email){
+        alert('Please provide name and email');
+        return;
+      }
+      // this is a demo: replace with fetch(...) to send data to a server
+      alert('Thanks, ' + name + '! Your message has been received.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
